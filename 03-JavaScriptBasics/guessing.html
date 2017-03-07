@@ -9,11 +9,16 @@
 
 		<script>
 			// read user's number (popup window)
+			var userNumber = prompt("Enter your number:");
 			
 			// create a random number
-			
+			var n = Math.floor(Math.random() * (5 - 1)) + 1;
 			// compare the numbers
-			
+			if (userNumber == n) {
+				alert("Good work!");
+			} else {
+				alert("Sorry");
+			}
 			// show results (popup window)
 			
 		</script>
