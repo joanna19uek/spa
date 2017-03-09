@@ -14,18 +14,30 @@
 
 			// assing random integers to array elements
 			for (i = 0; i < tab.length; i++) {
-				// ...
+				tab[i] = Math.floor(Math.random() * 5) + 1;
 			}
 
 			// show array elements
 			console.log('Array elements:');
-			// ...
+			for (i = 0; i < tab.length; i++) {
+				console.log(tab[i]);
+			}
 			
 			// check whether the array is ordered
-			// ...
+			var ordered = true;
+			for (i = 1; i < tab.length; i++) {
+				if (tab[i] < tab[i - 1]) {
+					ordered = false;
+					break;
+				}
+			}
 			
 			// display message: Array is ordered / unordered
-			// ...
+			if (ordered == true) {
+				console.log("Array is ordered");
+			} else {
+				console.log("Array is unordered");
+			}
 		</script>
 	</body>
 </html>
