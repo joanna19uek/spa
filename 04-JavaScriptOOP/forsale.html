@@ -7,6 +7,58 @@
 	<body>
 		<h1>Houses for sale</h1>
 		<script>
+			var bedrooms, facilities, price, address, phone;
+			var changePrice, addFacility, description;
+			
+			function House(bedrooms, facilities, price, address, phone) {
+				this.bedrooms = bedrooms;
+				this.facilities = facilities;
+				this.price = price;
+				this.address = address;
+				this.phone = phone;
+				this.changePrice = function(newPrice) {
+										this.price = newPrice;
+									};
+				this.addFacility = function(newFacility) {
+										this.facilities.push(newFacility);
+									};
+				this.description = function() {
+										var f = "";
+										var a;
+										
+										for (i in this.facilities) {
+											f += "	" + this.facilities[i] + "\n";
+										}
+										
+										a = "	street: " + this.address.street + "\n	city: " + this.address.city;
+										
+										var s = "Bedrooms: " + this.bedrooms + "\nFacilities:\n" + f + "Price: " + this.price + "\nAddress:\n" + a + "\nPhone: " + this.phone;
+										return s;
+									};
+			}
+			
+			var houses = [];
+			houses[0] = new House(3, ["gareden", "garage"], 500000, {street: "Złota", city: "Kraków"}, "267 491 208");
+			houses[1] = new House(2, ["garage"], 150000, {street: "Zielona", city: "Wrocław"}, "789 226 410");
+			houses[2] = new House(5, ["garden", "swimming pool", "garage"], 800500, {street: "Bogata", city: "Poznań"}, "550 469 886");
+			houses[3] = new House(2, ["garden"], 195000, {street: "Zacisze", city: "Gdańsk"}, "697 415 577");
+			houses[4] = new House(3, ["garage"], 264300, {street: "Błękitna", city: "Warszawa"}, "603 997 124");
+			
+			for (h in houses) {
+				console.log(houses[h].description());
+			}
+			
+			houses[0].changePrice(450500);
+			houses[3].changePrice(200000);
+			
+			houses[3].addFacility("garage");
+			houses[1].addFacility("swimming pool");
+			houses[4].addFacility("garden");
+			
+			for (h in houses) {
+				console.log(houses[h].description());
+			}
+			
 		</script>
 	</body>
 </html>

@@ -15,17 +15,21 @@
 						height: null,
 						enterData: function(){
 							// enter weight and height, and assign them to the object properties
+							BMI.weight = prompt("Enter your weight in kilograms [kg]:");
+							BMI.height = prompt("Enter your height in meters [m]:");
 						},
 						calculate: function(){
-							return // create a formula for calculating bmi
+							return (BMI.weight / Math.pow(BMI.height, 2)).toFixed(2);
 						},
 						display: function(){
 							// display the result in a popup window
+							alert("Your BMI is: " + BMI.calculate());
 						}
 				}
 			
 				// call BMI methods
-				// ...
+				BMI.enterData();
+				BMI.display();
 			
 			}
 		</script>

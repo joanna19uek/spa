@@ -6,7 +6,32 @@
 	</head>
 	<body>
 		<h1>Create mobile phone</h1>
+		<button id="button" onClick="displayInfo()">Click</button>
 		<script>
+			var text;
+			
+			var myMobile = {
+					model: "Microsoft Lumia",
+					diagonal: 5,
+					dualSim: false,
+					lte: true,
+					memoryCard: ["microSD", "microSDHC", "microSDXC"],
+					procesor: {name:"Qualcomm Snapdragon 212 8909", core:4, cpuClock:"1,30 GHz", gpu:"Adreno 304"}
+			};
+			
+			function displayInfo() {
+				text = "## My phone ##\nModel: " + myMobile.model + "\nDiagonal: " + myMobile.diagonal + "\nDualSIM: " + myMobile.dualSim
+							+ "\nLTE: " + myMobile.lte + "\nMemory card:\n";
+				
+				for (var x in myMobile.memoryCard) {
+					text += "	" + myMobile.memoryCard[x] + "\n";
+				}
+				
+				text += "Procesor:\n	name: " + myMobile.procesor.name + "\n	core: " + myMobile.procesor.core + "\n	CPU clock: " + myMobile.procesor.cpuClock
+							+ "\n	GPU: " + myMobile.procesor.gpu;
+							
+				alert(text);
+			}
 		</script>
 	</body>
 </html>

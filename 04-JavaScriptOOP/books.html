@@ -7,6 +7,37 @@
 	<body>
 		<h1>Display books list</h1>
 		<script>
+			var id;
+			var title;
+			var author;
+			var format;
+			var price;
+			var display;
+		
+			function Book(id, title, author, format, price) {
+				this.id = id;
+				this.title = title;
+				this.author = author;
+				this.format = format;
+				this.price = price;
+				this.display = function() {
+									console.log("Id: %s Title: %s Author: %s Format: %s Price: %s", this.id, this.title, this.author, this.format, this.price);
+								};
+			}
+			
+			var booksArray = [
+					new Book(1, "The Return of Duck and Goose", "Sir Piggy", "paperback", 19.99),
+					new Book(2, "The Adventures of Duck and Goose", "D. Cow", "hardback", 18.99),
+					new Book(3, "My Friend is a Duck", "A. Parrot", "paperback", 14.99),
+					new Book(4, "`Duck ang Goose` Cheat Sheet for Students", "Polly Parrot", "paperback", 5.99),
+					new Book(5, "`Duck ang Goose`: an allegory for modern times?", "Bor Ing", "ebook", 59.99)
+				];
+				
+			for (var b in booksArray) {
+				if (booksArray[b].format == "paperback") {
+					booksArray[b].display();
+				}
+			}
 		</script>
 	</body>
 </html>

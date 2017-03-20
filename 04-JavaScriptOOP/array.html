@@ -7,18 +7,40 @@
 	<body>
 		<h1>Create methods</h1>
 		<script>
+			var sum = 0;
+			var lt = 0;
+			
 			var myArray = {
 					arr: [3,4,76,1,5,787,33,76,1,99,45,235,53,23],
 					min: function(){
 						// maximum value (sort the arr and take the last value, use a built-in function)
+						myArray.arr.sort(function(a, b){return (a - b)});
+						return myArray.arr[0];
 					},		
-					max: function(){},		// look at the min method comment
-					avg: function(){},		// avarage value
-					lth: function(val){}	// the number of arr values less than 'val'
+					max: function(){
+						return myArray.arr[myArray.arr.length - 1];
+					},
+					avg: function(){
+						for (var i in myArray.arr) {
+							sum += myArray.arr[i];
+						}
+						return (sum / myArray.arr.length).toFixed(2);
+					},
+					lth: function(val){
+						for (var x in myArray.arr) {
+							if (myArray.arr[x] < val) {
+								lt++;
+							}
+						}
+						return lt;
+					}
 			};
 			
 			// display results (min,max,avg,lth) in the console
-			// ...
+			console.log("Min value is: ", myArray.min());
+			console.log("Max value is: ", myArray.max());
+			console.log("Average value is: ", myArray.avg());
+			console.log("There is %s elements less than %s", myArray.lth(100), 100); 
 		</script>
 	</body>
 </html>

@@ -18,7 +18,16 @@
 			console.log("## My favourite film ##");
 			console.log("Title: ", myFavMovie.title);
 			console.log("Genre: ", myFavMovie.genre);
-			// ...
+			console.log("Year: ", myFavMovie.year);
+			console.log("Database: ", myFavMovie.database);
+			console.log("Budget: ", myFavMovie.specs.budget);
+			console.log("Language: ", myFavMovie.specs.language);
+			console.log("Digital sound: ", myFavMovie.specs.digitalSound);
+			console.log("Stars:");
+			var s;
+			for (s in myFavMovie.stars) {
+				console.log("	", myFavMovie.stars[s]);
+			}
 			
 		</script>
 	</body>
