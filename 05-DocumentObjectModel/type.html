@@ -23,7 +23,22 @@
 		<textarea rows="15" cols="50"></textarea><br>
 		
 		<script>
-			// a JavaScript code here ...
+			var textField = document.getElementsByTagName("textarea")[0];
+            var timer;
+            textField.onfocus = function() {
+                timer = setTimeout(count, 30000);
+            }
+            
+            function count() {
+                var words;
+                var characters;
+                
+                var string = document.getElementsByTagName("textarea")[0].value;
+                words = string.split(" ").length;
+                characters = string.length;
+                
+                alert("You typed " + words + " words (" + characters + " characters)");
+            }
 			
 		</script>
 		

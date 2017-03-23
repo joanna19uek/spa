@@ -3,9 +3,349 @@
 	<head>
 		<title>Fill in a form</title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            td {
+                padding: 5px;
+                background-color:rgb(230,230,230);
+            }
+        </style>
 	</head>
 	<body>
-		
+        <center>
+        <img src="http://www.pikw.pl/files/1766/logo_zielone-pl.png?1467983123440">
+        <h2>The personal questionnaire for part-time Bachelor programmes</h2><br>
+		<form>
+            <table border="1" style="border-collapse:collapse">
+            <!--<table class="table table-bordered table-condensed">-->
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">PERSONAL DATA</td>
+                </tr>
+                <tr>
+                    <td>Surname (family name):</td>
+                    <td><input id="surname" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Name (names) /first name/:</td>
+                    <td><input id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><label class="radio-inline"><input type="radio" name="gender" value="male">male</label>
+                        <label class="radio-inline"><input type="radio" name="gender" value="female">female</label></td>
+                </tr>
+                <tr>
+                    <td>Father's first name:</td>
+                    <td><input id="fname" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Mother's first name:</td>
+                    <td><input id="mname" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Date of birth:</td>
+                    <td><input id="birthday" type="date"></td>
+                </tr>
+                <tr>
+                    <td>Place of birth:</td>
+                    <td><input id="birthplace" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Citizenship (country):</td>
+                    <td>
+                        <select name="country">
+                            <option value=""></option>
+                            <option value="Belarus">BELARUS</option>
+                            <option value="Germany">GERMANY</option>
+                            <option value="Lithuania">LITHUANIA</option>
+                            <option value="Poland">POLAND</option>
+                            <option value="Russian Federation">RUSSIAN FEDERATION</option>
+                            <option value="Slovakia">SLOVAKIA</option>
+                            <option value="Ukraine">UKRAINE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nationality:</td>
+                    <td><input id="nationality" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Permanent Residence Card:<br><i style="font-size:9pt">applicable to foreign residents</i></td>
+                    <td><input id="prc" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Card of the Pole:<br><i style="font-size:9pt">applicable to foreign residents</i></td>
+                    <td><input id="CotP" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Your visa: country of issue:<br><i style="font-size:9pt">applicable to foreign residents</i></td>
+                    <td>
+                        <select name="countryVisa">
+                            <option value=""></option>
+                            <option value="Belarus">BELARUS</option>
+                            <option value="Germany">GERMANY</option>
+                            <option value="Lithuania">LITHUANIA</option>
+                            <option value="Poland">POLAND</option>
+                            <option value="Russian Federation">RUSSIAN FEDERATION</option>
+                            <option value="Slovakia">SLOVAKIA</option>
+                            <option value="Ukraine">UKRAINE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country of origin:</td>
+                    <td>
+                        <select name="countryOrigin">
+                            <option value=""></option>
+                            <option value="Belarus">BELARUS</option>
+                            <option value="Germany">GERMANY</option>
+                            <option value="Lithuania">LITHUANIA</option>
+                            <option value="Poland">POLAND</option>
+                            <option value="Russian Federation">RUSSIAN FEDERATION</option>
+                            <option value="Slovakia">SLOVAKIA</option>
+                            <option value="Ukraine">UKRAINE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">IDENTIFICATION DATA</td>
+                </tr>
+                <tr>
+                    <td>PESEL No.:</td>
+                    <td><input id="pesel" type="text"></td>
+                </tr>
+                <tr>
+                    <td>ID/Passport No.:</td>
+                    <td><input id="IDpass" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Passport/ID card expiration date:</td>
+                    <td><input id="IDexpire" type="date"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">PERMANENT ADDRESS</td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td>
+                        <select name="countryPermanent">
+                            <option value=""></option>
+                            <option value="Belarus">BELARUS</option>
+                            <option value="Germany">GERMANY</option>
+                            <option value="Lithuania">LITHUANIA</option>
+                            <option value="Poland">POLAND</option>
+                            <option value="Russian Federation">RUSSIAN FEDERATION</option>
+                            <option value="Slovakia">SLOVAKIA</option>
+                            <option value="Ukraine">UKRAINE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Postal code, City:</td>
+                    <td><input id="postcodePermanent" type="text">  <input id="cityPermanent" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Street, number:</td>
+                    <td><input id="streetPermanent" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">CORRESPONDENCE ADDRESS <i style="font-size:9pt">applicable if different then the official address</i></td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td>
+                        <select name="countryCorresp">
+                            <option value=""></option>
+                            <option value="Belarus">BELARUS</option>
+                            <option value="Germany">GERMANY</option>
+                            <option value="Lithuania">LITHUANIA</option>
+                            <option value="Poland">POLAND</option>
+                            <option value="Russian Federation">RUSSIAN FEDERATION</option>
+                            <option value="Slovakia">SLOVAKIA</option>
+                            <option value="Ukraine">UKRAINE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Postal code, City:</td>
+                    <td><input id="postcodeCorresp" type="text">  <input id="cityCorresp" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Street, number:</td>
+                    <td><input id="streetCorresp" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">DISABILITY DETAILS</td>
+                </tr>
+                <tr>
+                    <td>Candidate with disabilities:</td>
+                    <td>
+                        <select name="disability">
+                            <option value=""></option>
+                            <option value="Loss of or poor hearing ability">Loss of or poor hearing ability</option>
+                            <option value="Blind persons or those with poor sight">Blind persons or those with poor sight</option>
+                            <option value="Mobility dysfunction, able to walk">Mobility dysfunction, able to walk</option>
+                            <option value="Mobility dysfunction, unable to walk">Mobility dysfunction, unable to walk</option>
+                            <option value="Other disabilities">Other disabilities</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">CONTACT</td>
+                </tr>
+                <tr>
+                    <td>Home telephone number:</td>
+                    <td><input id="Htel" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td><input id="tel" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input id="mail" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">ATTENDED SECONDARY SCHOOL</td>
+                </tr>
+                <tr>
+                    <td>Type of school:</td>
+                    <td>
+                        <select name="schoolType">
+                            <option value=""></option>
+                            <option value="secondary-school attended abroad">secondary-school attended abroad</option>
+                            <option value="secondary-school attended in Poland">secondary-school attended in Poland</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Full name of attended school:</td>
+                    <td><input id="schoolName" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Place:</td>
+                    <td><input id="schoolPlace" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Year of graduation:</td>
+                    <td><input id="graduationY" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Number of school leaving certificate:</td>
+                    <td><input id="certificateNumber" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Date of certificate:</td>
+                    <td><input id="certificateDate" type="date"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">FINAL SECONDARY SCHOOL EXAMINATION</td>
+                </tr>
+                <tr>
+                    <td>
+                        Basic Level<br>
+                        <select name="basicLvl">
+                            <option value=""></option>
+                            <option value="biology">biology</option>
+                            <option value="chemistry">chemistry</option>
+                            <option value="geography">geography</option>
+                            <option value="history">history</option>
+                            <option value="knowledge of society">knowledge of society</option>
+                            <option value="mathematics">mathematics</option>
+                            <option value="physics">physics</option>
+                        </select>
+                    </td>
+                    <td><input id="basicLvl%" type="text"> % points</td>
+                </tr>
+                <tr>
+                    <td>
+                        Advanced Level<br>
+                        <select name="advancedLvl">
+                            <option value=""></option>
+                            <option value="biology">biology</option>
+                            <option value="chemistry">chemistry</option>
+                            <option value="geography">geography</option>
+                            <option value="history">history</option>
+                            <option value="knowledge of society">knowledge of society</option>
+                            <option value="mathematics">mathematics</option>
+                            <option value="physics">physics</option>
+                        </select>
+                    </td>
+                    <td><input id="advancedLvl%" type="text"> % points</td>
+                </tr>
+                <tr>
+                    <td>Foreign language - Basic Level:</td>
+                    <td><input id="langBasicLvl%" type="text"> % points</td>
+                </tr>
+                <tr>
+                    <td>Foreign language - Advanced Level:</td>
+                    <td><input id="langAdvLvl%" type="text"> % points</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">TYPE OF UNIVERSITY PROGRAMMES</td>
+                </tr>
+                <tr>
+                    <td>Class sessions:</td>
+                    <td>
+                        <select name="session">
+                            <option value=""></option>
+                            <option value="1 (classes from Monday to Thursday)">1 (classes from Monday to Thursday)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Major study programme and<br>place of studies 1:</td>
+                    <td>
+                        <select name="studies1">
+                            <option value=""></option>
+                            <option value="Finance and Accounting - Corporate finance and accounting">Finance and Accounting - Corporate finance and accounting</option>
+                            <option value="International Economic Relations - International Business">International Economic Relations - International Business</option>
+                        </select><br>
+                        <select name="studies1city">
+                            <option value=""></option>
+                            <option value="Kraków">Kraków</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Major study programme and<br>place of studies 2:</td>
+                    <td>
+                        <select name="studies2">
+                            <option value=""></option>
+                            <option value="Finance and Accounting - Corporate finance and accounting">Finance and Accounting - Corporate finance and accounting</option>
+                            <option value="International Economic Relations - International Business">International Economic Relations - International Business</option>
+                        </select><br>
+                        <select name="studies2city">
+                            <option value=""></option>
+                            <option value="Kraków">Kraków</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Major study programme and<br>place of studies 3:</td>
+                    <td>
+                        <select name="studies3">
+                            <option value=""></option>
+                            <option value="Finance and Accounting - Corporate finance and accounting">Finance and Accounting - Corporate finance and accounting</option>
+                            <option value="International Economic Relations - International Business">International Economic Relations - International Business</option>
+                        </select><br>
+                        <select name="studies3city">
+                            <option value=""></option>
+                            <option value="Kraków">Kraków</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number of CUE's album:<br><i style="font-size:9pt">If you are a student or graduate of CUE,<br>enter your album's number</i></td>
+                    <td><input id="album" type="text"></td>
+                </tr>
+            </table>
+            <br><br>
+            <input type="button" value="Register data" class="btn btn-default btn-lg"><br><br>
+        </form>
+        </center>
 		<script>
 			// a JavaScript code here ...
 			

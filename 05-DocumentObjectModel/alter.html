@@ -21,7 +21,36 @@
 		
 		<script>
 			// a JavaScript code here ...
-			
+			var title = document.getElementsByTagName("h1")[0];
+            title.onclick = function() {
+                title.innerHTML += " Part 2";
+            }
+            
+            var band = document.getElementsByTagName("h3")[0];
+            band.onclick = function() {
+                document.getElementsByTagName("p")[1].style.visibility = "visible";
+            }
+            
+            var lyrics = document.getElementsByTagName("p")[0];
+            lyrics.onclick = function() {
+                lyrics.style.fontStyle = "italic";
+            }
+            
+            var page = document;
+            page.ondblclick = function() {
+                page.bgColor = "yellow";
+            }
+            
+            lyrics.oncopy = function() {
+                alert("All rights reserved");
+            }
+            
+            var description = document.getElementsByTagName("p")[1];
+            description.onclick = function() {
+                var image = document.createElement("img");
+                document.body.appendChild(image);
+                image.setAttribute("src", "https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg");
+            }
 		</script>
 	</body>
 </html>

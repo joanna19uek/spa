@@ -6,8 +6,95 @@
 	</head>
 	<body>
 		<script>
-			// a JavaScript code here ...
 			
+			var table = document.createElement("table");
+            table.setAttribute("border", "1");
+            table.style.borderCollapse = "collapse";
+            
+            var parentTable = document.getElementsByTagName("table");
+            
+            var row1 = document.createElement("tr");
+            var row2 = document.createElement("tr");
+            var row3 = document.createElement("tr");
+            var row4 = document.createElement("tr");
+            var row5 = document.createElement("tr");
+            
+            var parentRow = document.getElementsByTagName("tr");
+            
+            var header1 = document.createElement("td");
+            header1.style.backgroundColor = "rgb(175,175,175)";
+            header1.style.fontWeight = "bold";
+            header1.style.paddingLeft = "5px";
+            header1.style.paddingRight = "10px";
+            var header2 = document.createElement("td");
+            header2.style.backgroundColor = "rgb(175,175,175)";
+            header2.style.fontWeight = "bold";
+            header2.style.paddingLeft = "5px";
+            header2.style.paddingRight = "10px";
+            
+            var cell1 = document.createElement("td");
+            cell1.style.paddingLeft = "5px";
+            cell1.style.paddingRight = "10px";
+            var cell2 = document.createElement("td");
+            cell2.style.paddingLeft = "5px";
+            cell2.style.paddingRight = "10px";
+            var cell3 = document.createElement("td");
+            cell3.style.paddingLeft = "5px";
+            cell3.style.paddingRight = "10px";
+            var cell4 = document.createElement("td");
+            cell4.style.paddingLeft = "5px";
+            cell4.style.paddingRight = "10px";
+            var cell5 = document.createElement("td");
+            cell5.style.paddingLeft = "5px";
+            cell5.style.paddingRight = "10px";
+            var cell6 = document.createElement("td");
+            cell6.style.paddingLeft = "5px";
+            cell6.style.paddingRight = "10px";
+            var cell7 = document.createElement("td");
+            cell7.style.paddingLeft = "5px";
+            cell7.style.paddingRight = "10px";
+            var cell8 = document.createElement("td");
+            cell8.style.paddingLeft = "5px";
+            cell8.style.paddingRight = "10px";
+            
+            
+            document.body.appendChild(table);
+                        
+            parentTable[0].appendChild(row1);
+            
+            header1.appendChild(document.createTextNode("Email"));
+            parentRow[0].appendChild(header1);
+            header2.appendChild(document.createTextNode("Connecting to the Internet"));
+            parentRow[0].appendChild(header2);
+            
+            parentTable[0].appendChild(row2);
+            
+            cell1.appendChild(document.createTextNode("receive/get/open email"));
+            parentRow[1].appendChild(cell1);
+            cell2.appendChild(document.createTextNode("use/access/log onto the Internet"));
+            parentRow[1].appendChild(cell2);
+            
+            parentTable[0].appendChild(row3);
+            
+            cell3.appendChild(document.createTextNode("exchange email addresses"));
+            parentRow[2].appendChild(cell3);
+            cell4.appendChild(document.createTextNode("access/connect to/locate the server"));
+            parentRow[2].appendChild(cell4);
+            
+            parentTable[0].appendChild(row4);
+            
+            cell5.appendChild(document.createTextNode("open/send/contain an attachment"));
+            parentRow[3].appendChild(cell5);
+            cell6.appendChild(document.createTextNode("browse/surf/search/scour the Internet"));
+            parentRow[3].appendChild(cell6);
+            
+            parentTable[0].appendChild(row5);
+            
+            cell7.appendChild(document.createTextNode("open/check your inbox"));
+            parentRow[4].appendChild(cell7);
+            cell8.appendChild(document.createTextNode("install/use/configure a firewall"));
+            parentRow[4].appendChild(cell8);
+            
 		</script>
 	</body>
 </html>
