@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fill in a form</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            td {
+                padding: 5px;
+                background-color:rgb(230,230,230);
+            }
+        </style>
+	</head>
+	<body>
+        <center>
+        <img src="http://www.pikw.pl/files/1766/logo_zielone-pl.png?1467983123440">
+        <h3>The personal questionnaire for part-time Bachelor programmes</h3><br>
+		<form>
+            <table border="1" style="border-collapse:collapse">
+            <!--<table class="table table-bordered table-condensed">-->
+                <tr>
+                    <td colspan="2" style="background-color:rgb(160,160,160)">PERSONAL DATA</td>
+                </tr>
+                <tr>
+                    <td>Surname (family name):</td>
+                    <td><input id="surname" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Name (names) /first name/:</td>
+                    <td><input id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><label class="radio-inline"><input type="radio" name="gender" value="male">male</label>
+                        <label class="radio-inline"><input type="radio" name="gender" value="female">female</label></td>
+                </tr>
+                <tr>
+                    <td>Father's first name:</td>
+                    <td><input id="fname" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Mother's first name:</td>
+                    <td><input id="mname" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Date of birth:</td>
+                    <td><input id="birthdate" type="date"></td>
+                </tr>
+                <tr>
+                    <td>Place of birth:</td>
+                    <td><input id="birthplace" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Citizenship (country):</td>
+                    <td>
+                        <select id="country">
+                            <option value=""></option>
+                            <option value="Belarus">BELARUS</option>
+                            <option value="Germany">GERMANY</option>
+                            <option value="Lithuania">LITHUANIA</option>
+                            <option value="Poland">POLAND</option>
+                            <option value="Russian Federation">RUSSIAN FEDERATION</option>
+                            <option value="Slovakia">SLOVAKIA</option>
+                            <option value="Ukraine">UKRAINE</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+            <input id="button" type="button" value="Register data" class="btn btn-default btn-lg"><br><br>
+        </form>
+        </center>
+		<script>
+			var student = {
+                surname: null,
+                name: null,
+                gender: null,
+                fname: null,
+                mname: null,
+                birthdate: null,
+                birthplace: null,
+                country: null,
+                getInfo: function() {
+                    student.surname = $("#surname").val();
+                    student.name = $("#name").val();
+                    student.gender = $("input[name=gender]:checked").val();
+                    student.fname = $("#fname").val();
+                    student.mname = $("#mname").val();
+                    student.birthdate = $("#birthdate").val();
+                    student.birthplace = $("#birthplace").val();
+                    student.country = $("#country").val();
+                }
+            };
+            
+            function display() {
+                var string = "Surname (family name): " + student.surname + "\nName (names) /first name/: " + student.name + "\nGender: " + student.gender + "\nFather's first name: " + student.fname + "\nMother's first name: " + student.mname + "\nDate of birth: " + student.birthdate + "\nPlace of birth: " + student.birthplace + "\nCitizenship (country): " + student.country;
+                return string;
+            }
+            
+            
+			
+            var button = document.getElementById("button");
+            button.onclick = function() {
+                student.getInfo();
+                console.log(display());
+            }
+		</script>
+	</body>
+</html>
