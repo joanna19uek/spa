@@ -1,0 +1,49 @@
+{
+  "name": "Anna",
+  "surname": "Nowak",
+  "age": 30,
+  "gender": "female",
+  "email": "nowakanna@gmail.com",
+  "phone": {
+    "landline": "182663489",
+    "mobile": "769351204"
+  },
+  "address": {
+    "street": "Zielona 12",
+    "postCode": "31-236",
+    "city": "Kraków"
+  },
+  "interests": [
+    "swimming",
+    "shopping",
+    "food"
+  ],
+  "family": {
+    "spouse": {
+      "name": "Andrzej",
+      "surname": "Nowak"
+    },
+    "children": [
+      {
+        "name": "Ola",
+        "surname": "Nowak",
+        "gender": "female",
+        "age": 2,
+        "interests": [
+          "sleeping",
+          "food"
+        ]
+      },
+      {
+        "name": "Marcin",
+        "surname": "Nowak",
+        "gender": "male",
+        "age": 8,
+        "interests": [
+          "PC games",
+          "football"
+        ]
+      }
+    ]
+  }
+}

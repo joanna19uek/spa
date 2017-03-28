@@ -1,0 +1,136 @@
+[
+    {
+      "name": "Anna",
+      "surname": "Nowak",
+      "age": 30,
+      "gender": "female",
+      "email": "nowakanna@gmail.com",
+      "phone": {
+        "landline": "182663489",
+        "mobile": "769351204"
+      },
+      "address": {
+        "street": "Zielona 12",
+        "postCode": "31-236",
+        "city": "Kraków"
+      },
+      "interests": [
+        "swimming",
+        "shopping",
+        "food"
+      ],
+      "family": {
+        "spouse": {
+          "name": "Andrzej",
+          "surname": "Nowak"
+        },
+        "children": [
+          {
+            "name": "Ola",
+            "surname": "Nowak",
+            "gender": "female",
+            "age": 2,
+            "interests": [
+              "sleeping",
+              "food"
+            ]
+          },
+          {
+            "name": "Marcin",
+            "surname": "Nowak",
+            "gender": "male",
+            "age": 8,
+            "interests": [
+              "PC games",
+              "football"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jan",
+      "surname": "Kowalski",
+      "age": 48,
+      "gender": "male",
+      "email": "jkowalski@gmail.com",
+      "phone": {
+        "landline": "185541564",
+        "mobile": "880456931"
+      },
+      "address": {
+        "street": "Spokojna 69",
+        "postCode": "31-230",
+        "city": "Kraków"
+      },
+      "interests": [
+        "cinema",
+        "cars"
+      ],
+      "family": {
+        "spouse": {
+          "name": "Brygida",
+          "surname": "Kowalska"
+        },
+        "children": [
+          {
+            "name": "Brian",
+            "surname": "Kowalski",
+            "gender": "female",
+            "age": 15,
+            "interests": [
+              "PC games",
+              "food"
+            ]
+          },
+          {
+            "name": "Jessica",
+            "surname": "Kowalska",
+            "gender": "female",
+            "age": 20,
+            "interests": [
+              "shopping"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Janina",
+      "surname": "Pocieszna",
+      "age": 92,
+      "gender": "female",
+      "email": null,
+      "phone": {
+        "landline": "182641395",
+        "mobile": "697335840"
+      },
+      "address": {
+        "street": "Zacisze 43",
+        "postCode": "31-228",
+        "city": "Kraków"
+      },
+      "interests": [
+        "cleaning",
+        "sleeping"
+      ],
+      "family": {
+        "spouse": {
+          "name": null,
+          "surname": null
+        },
+        "children": [
+          {
+            "name": "Maria",
+            "surname": "Pocieszna",
+            "gender": "female",
+            "age": 65,
+            "interests": [
+              "accounting",
+              "food"
+            ]
+          }
+        ]
+      }
+    }
+]
