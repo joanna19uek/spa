@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Store form data</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <p>Imię:</p>
+            <input type="text" id="imie"/><br>
+            
+            <p>Nazwisko:</p>
+            <input type="text" id="nazwisko"/><br><br>
+            
+            <input type="button" id="save" value="save"/>
+            <input type="button" id="restore" value="restore"/>
+        </form>
+        <script>
+            var saveB = document.getElementById("save");
+            var restoreB = document.getElementById("restore");
+            
+            var name;
+            var surname;
+            
+            saveB.onclick = function() {
+                name = document.getElementById("imie").value;
+                surname = document.getElementById("nazwisko").value;
+                
+                localStorage.setItem("imie", name);
+                localStorage.setItem("nazwisko", surname);
+            }
+            
+            restoreB.onclick = function() {
+                name = localStorage.getItem("imie");
+                surname = localStorage.getItem("nazwisko");
+                
+                document.getElementById("imie").value = name;
+                document.getElementById("nazwisko").value = surname;
+            }
+        </script>
+    </body>
+</html>

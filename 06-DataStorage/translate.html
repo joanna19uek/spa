@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Local storage</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2>Saving data from object to local storage</h2>
+        <script>
+            var person = {
+                name: "Joanna",
+                surname: "Pełeńska",
+                age: 21,
+                gender: "female",
+                email: "joanna@pelenski.pl",
+                phone: {landline: "182655134", mobile: "732828047"},
+                address: {street: "Zielona 52", postCode: "34-471", city: "Ludźmierz"},
+                interests: ["swimming", "riding bike", "programming"]
+            };
+            
+            var data = JSON.stringify(person);
+            
+            localStorage.setItem("me", data);
+        </script>
+    </body>
+</html>

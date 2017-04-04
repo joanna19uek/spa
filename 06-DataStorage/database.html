@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Local database</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Connecting with a local sql database</h1>
+        <script>
+            var db = openDatabase("mydb", "1.0", "Users", 2 * 1024 *1024);
+            
+            db.transaction(function(tx) {
+                tx.executeSql("create table if not exists user (name, surname, age, username, email)");
+                tx.executeSql("insert into user (name, surname, age, username, email) values ('Beverly', 'Bell', 35, 'bbell0', 'bbell0@storify.com')");
+                tx.executeSql("insert into user (name, surname, age, username, email) values ('Jane', 'Fields', 35, 'jfields1', 'jfields1@privacy.gov.au')");
+                tx.executeSql("insert into user (name, surname, age, username, email) values ('Jane', 'Simmons', 25, 'jsimmons2', 'jsimmons2@discovery.com')");
+                tx.executeSql("insert into user (name, surname, age, username, email) values ('Russell', 'Garrett', 35, 'rgarrett3', 'rgarrett3@php.net')");
+                tx.executeSql("insert into user (name, surname, age, username, email) values ('Lori', 'Dixon', 23, 'ldixon4', 'ldixon4@myspace.com')");
+            });
+            
+            db.transaction(function(tx) {
+                tx.executeSql("select * from user order by surname, name", [], function(tx, results) {
+                    var len = results.rows.length;
+                    
+                    for (var i = 0; i < len; i++) {
+                        console.log(results.rows.item[i].name + " " + results.rows.item[i].surname);
+                    }
+                }, null);
+            });
+        </script>
+    </body>
+</html>

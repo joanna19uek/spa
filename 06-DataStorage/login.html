@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Log in to an app</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <p>Username:</p>
+            <input type="text" id="user"/>
+            
+            <p>Password:</p>
+            <input type="password" id="password"/><br><br>
+            
+            <input type="button" id="login" value="Log in"/>
+        </form>
+        <script>
+            var loginB = document.getElementById("login");
+            
+            var user;
+            var password;
+            
+            loginB.onclick = function() {
+                user = document.getElementById("user").value;
+                password = document.getElementById("password").value;
+                
+                if(!(localStorage.username && localStorage.password)) {
+                    localStorage.username = "annie";
+                    localStorage.password = "ax123";
+                }
+                
+                var us = localStorage.getItem("username");
+                var pass = localStorage.getItem("password");
+                
+                if (user == us && password == pass) {
+                    alert("User logged in successfully");
+                } else {
+                    alert("Incorrect username or password");
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>
