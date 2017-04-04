@@ -3,14 +3,16 @@
 	<head>
 		<title>My favourite film</title>
 		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<h1>My favourite film</h1>
-		<p></p>
+		<p id="akapit"></p>
 		
 		<script>
-			// a JavaScript code here ...
-			
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'http://v-ie.uek.krakow.pl/~s187772/SPA/myfilm.txt', true);
+            $("#akapit").load('myfilm.txt');
 		</script>
 	</body>
 </html>
