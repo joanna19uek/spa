@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Exchange rates</title>
+		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Exchange rates</h1>
+        <h3>EUR</h3>
+        <p id="eur"></p>
+        <h3>USD</h3>
+        <p id="usd"></p>
+        <h3>GBP</h3>
+        <p id="gbp"></p>
+        <h3>CHF</h3>
+        <p id="chf"></p>
+        
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'http://api.nbp.pl/api/exchangerates/tables/a/today?format=json', true);
+            
+            $.getJSON('http://api.nbp.pl/api/exchangerates/tables/a/today?format=json', function(data){
+                $("#eur").html(data[0].rates[7].mid);
+                $("#usd").html(data[0].rates[1].mid);
+                $("#gbp").html(data[0].rates[10].mid);
+                $("#chf").html(data[0].rates[9].mid);
+            });
+            
+        </script>
+    </body>
+</html>

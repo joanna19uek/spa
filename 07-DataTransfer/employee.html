@@ -3,14 +3,18 @@
 	<head>
 		<title>Employee</title>
 		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	</head>
 	<body>
 		<h1>Employee</h1>
-		<p></p>
+		<p id="akapit"></p>
 		
 		<script>
 			// a JavaScript code here ...
-			
+			var xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'http://v-ie.uek.krakow.pl/~s187772/SPA/', true);
+            //$('p').load('employee.json');
+            $.get('employee.json', function(data){$("#akapit").html(JSON.stringify(data))});
 		</script>
 	</body>
 </html>

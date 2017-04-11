@@ -3,20 +3,29 @@
 	<head>
 		<title>Poland</title>
 		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	</head>
 	<body>
 		<h1>Official name</h1>
-		<p></p>
+		<p id="name"></p>
 		
 		<h1>Capital city</h1>
-		<p></p>
+		<p id="capital"></p>
 
 		<h1>Countries bordering</h1>
-		<p></p>
+		<p id="border"></p>
 
 		<script>
-			// a JavaScript code here ...
-			
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'http://v-ie.uek.krakow.pl/~s187772/SPA/', true);
+            
+            $.getJSON('poland.json', function(data){
+                $("#name").html(data.name.official);
+                $("#capital").html(data.capital);
+                data.borders.forEach(function(item){
+                    $("#border").html($("#border").html() + item + " ");
+                });
+            });
 		</script>
 	</body>
 </html>
