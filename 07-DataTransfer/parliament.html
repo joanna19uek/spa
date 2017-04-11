@@ -16,7 +16,7 @@
             
             $.getJSON('https://api-v3.mojepanstwo.pl/dane/poslowie.json', function(data){
                 data.Dataobject.forEach(function(item){
-                    $("#list").html($("#list").html() + JSON.stringify(item) + '<br>');
+                    $("#list").html($("#list").html() + item.data['ludzie.nazwa'] + '<br>');
                 });
             });
 		</script>
