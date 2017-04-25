@@ -14,11 +14,29 @@
 		<hr><!-- form to add new currency -->
 		<h3>Add new currency</h3>
 		<p>Currency code (e.g. EUR):<br>	
-		<input type="text" id="code" maxlength="3" ></p>
+		<!-- <input type="text" id="code" maxlength="3" > -->
+        <select id="code">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="CHF">CHF</option>
+            <option value="CZK">CZK</option>
+            <option value="HRK">HRK</option>
+            <option value="HUF">HUF</option>
+        </select></p>
 		<p>Exchange rate (e.g. 4.02):<br>
 		<input type="text" id="rate" maxlength="4"></p>
 		<p>Currency name (e.g. Euro):<br>
-		<input type="text" id="name" maxlength="15"></p>
+		<!-- <input type="text" id="name" maxlength="15"> -->
+        <select id="name">
+            <option value="Euro">Euro</option>
+            <option value="Dolar">Dolar</option>
+            <option value="Funt">Funt</option>
+            <option value="Frank">Frank</option>
+            <option value="Korona">Korona</option>
+            <option value="Kuna">Kuna</option>
+            <option value="Forint">Forint</option>
+        </select></p>
 		<input type="button" value="Add new currency" onclick="view.addCurrency()">
 	</body>
 </html>
