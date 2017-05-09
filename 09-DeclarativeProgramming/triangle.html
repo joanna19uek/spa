@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+</head>
+
+<body>
+
+	<h1>The area of a square</h1>
+	<div ng-app="" ng-init="triangle={sideLength:0, height:0}"> 
+
+		<p>Triangle side length: <input type="number" ng-model="triangle.sideLength"></p>
+        <p>Triangle height: <input type="number" ng-model="triangle.height"></p>
+		<p>The area of a triangle is <b>{{0.5 * triangle.sideLength * triangle.height}}</b></p>
+	</div>
+
+</body>
+</html>

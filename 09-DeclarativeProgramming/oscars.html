@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+	<table border="1" style="border-collapse:collapse">
+        <tr ng-repeat="film in academyAward">
+            <td>{{film.year}}</td>
+            <td>{{film.bestPicture}}</td>
+            <td>{{film.bestActor}}</td>
+            <td>{{film.bestActress}}</td>
+        </tr>
+    </table>
+    
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.academyAward = [
+                {
+                  "year": 2015,
+                  "bestPicture": "Spotlight",
+                  "bestActor": "Leonardo DiCaprio",
+                  "bestActress": "Brie Larson"
+                },
+                {
+                  "year": 2014,
+                  "bestPicture": "Birdman",
+                  "bestActor": "Eddie Redmayne",
+                  "bestActress": "Julianne Moore"
+                },
+                {
+                  "year": 2013,
+                  "bestPicture": "12 Years a Slave",
+                  "bestActor": "Matthew McConaughey",
+                  "bestActress": "Cate Blanchett"
+                },
+                {
+                  "year": 2012,
+                  "bestPicture": "Argo",
+                  "bestActor": "Daniel Day-Lewis",
+                  "bestActress": "Jennifer Lawrence"
+                }
+            ]
+        });
+    </script>
+
+</body>
+</html>
